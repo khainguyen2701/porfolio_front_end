@@ -1,8 +1,8 @@
 import React from "react";
 import Desktop from "./Desktop";
 
-const Project = () => {
+const Quotes = () => {
   return <Desktop />;
 };
 
-export default Project;
+export default Quotes;

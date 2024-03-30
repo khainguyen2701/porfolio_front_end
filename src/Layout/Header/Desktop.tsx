@@ -25,6 +25,7 @@ const StyleMenuList = styled(Text)`
   &:hover,
   &:focus {
     color: white;
+    cursor: pointer;
   }
 `;
 const StyledPreCharacter = styled.span`

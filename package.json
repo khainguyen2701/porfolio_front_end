@@ -18,7 +18,8 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-scroll-parallax": "^3.4.5",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

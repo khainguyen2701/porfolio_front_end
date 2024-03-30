@@ -1,9 +1,4 @@
-import {
-  ChakraBaseProvider,
-  defineStyle,
-  defineStyleConfig,
-  extendTheme
-} from "@chakra-ui/react";
+import { ChakraBaseProvider, Container, Divider } from "@chakra-ui/react";
 import HomePage from "./page";
 
 const theme = {
@@ -15,6 +10,10 @@ const theme = {
         margin: 0
       }
     }
+  },
+  components: {
+    Container,
+    Divider
   }
 };
 
