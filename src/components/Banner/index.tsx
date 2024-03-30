@@ -1,7 +1,8 @@
 import React from "react";
+import Desktop from "./Desktop";
 
 const Banner = () => {
-  return <div>Banner</div>;
+  return <Desktop />;
 };
 
 export default Banner;
