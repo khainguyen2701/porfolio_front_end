@@ -3,6 +3,8 @@ import Layout from "../Layout";
 import Banner from "../components/Banner";
 import Quotes from "../components/Quotes";
 import Project from "../components/Project";
+import Skill from "../components/Skill";
+import AboutMe from "../components/AboutMe";
 
 const HomePage = () => {
   return (
@@ -11,6 +13,8 @@ const HomePage = () => {
         <Banner />
         <Quotes />
         <Project />
+        <Skill />
+        <AboutMe />
       </Box>
     </Layout>
   );

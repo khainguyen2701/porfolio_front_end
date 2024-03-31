@@ -7,7 +7,8 @@ const theme = {
       "html, body": {
         backgroundColor: "#282c33",
         fontFamily: "'Exo 2', sans-serif",
-        margin: 0
+        margin: 0,
+        scrollBehavior: "smooth"
       }
     }
   },

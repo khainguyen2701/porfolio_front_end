@@ -1,7 +1,8 @@
 import React from "react";
+import Desktop from "./Desktop";
 
 const AboutMe = () => {
-  return <div>AboutMe</div>;
+  return <Desktop />;
 };
 
 export default AboutMe;

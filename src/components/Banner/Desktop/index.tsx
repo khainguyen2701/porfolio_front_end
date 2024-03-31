@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 
 const StyleVirtualButton = styled(Box)`
+  border-radius: 25px 5px;
   &:active {
     background-color: #c778dd;
     border-color: "white";
@@ -37,7 +38,7 @@ const Desktop = () => {
               color: "white"
             }}
           >
-            Elias is a{" "}
+            I'm is a
             <small
               style={{
                 fontSize: 32,
@@ -53,18 +54,24 @@ const Desktop = () => {
                   loop: true
                 }}
               />
-            </small>{" "}
-            with 2+ Years of experience
-          </Text>
-          <Text
-            style={{
-              color: "#ABB2BF",
-              fontSize: 16,
-              fontWeight: 400,
-              lineHeight: "25px"
-            }}
-          >
-            He crafts responsive websites where technologies meet creativity
+            </small>
+            with 2+ Years of experience{" "}
+            <small
+              style={{
+                fontSize: 32,
+                fontWeight: 600,
+                lineHeight: "42px",
+                color: "#C778DD"
+              }}
+            >
+              <Typewriter
+                options={{
+                  strings: ["on ReactJS framework"],
+                  autoStart: true,
+                  loop: true
+                }}
+              />
+            </small>
           </Text>
           <StyleVirtualButton
             as="button"
@@ -120,23 +127,15 @@ const Desktop = () => {
                     gap: "4px"
                   }}
                 >
-                  Currently working on
-                  <small
-                    style={{
-                      fontSize: 20,
-                      fontWeight: 600,
-                      lineHeight: "42px",
-                      color: "#C778DD"
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Currently I am looking for a job that best suits me"
+                      ],
+                      autoStart: true,
+                      loop: true
                     }}
-                  >
-                    <Typewriter
-                      options={{
-                        strings: ["Portfolio"],
-                        autoStart: true,
-                        loop: true
-                      }}
-                    />
-                  </small>
+                  />
                 </Text>
               </Box>
             </Box>

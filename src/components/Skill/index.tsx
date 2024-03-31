@@ -1,7 +1,8 @@
 import React from "react";
+import Desktop from "./Desktop";
 
 const Skill = () => {
-  return <div>Skill</div>;
+  return <Desktop />;
 };
 
 export default Skill;
