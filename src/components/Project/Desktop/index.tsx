@@ -18,7 +18,7 @@ const projects = [
       "It is an ecommerce project used for customers to manage and distribute products"
   },
   {
-    name: "Chan Brother Travel",
+    name: "Chan Brother Travel - Singapore",
     stack: "NextJS, Typescript, Redux Toolkit Query, MUI...",
     banner: "src/assets/chanbroders-fdsg.jpg",
     short_des: "Is a tourism project of the Singapore government"
@@ -34,11 +34,26 @@ const projects = [
 
 const Desktop = () => {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={60}>
+    <Box
+      className="project"
+      display={"flex"}
+      flexDirection={"column"}
+      gap={{ base: 6, md: 20 }}
+    >
       <TitleLine name="projects" />
-      <Box display={"flex"} justifyContent={"space-between"} mb={80}>
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        mb={{ base: 10, md: 20 }}
+        flexDirection={{ base: "column", md: "row" }}
+        gap={{ base: "30px" }}
+      >
         {projects.map((p, idx) => (
-          <Card style={{ border: "1px solid #ABB2BF" }} w={331} key={idx}>
+          <Card
+            style={{ border: "1px solid #ABB2BF" }}
+            w={{ base: "100%", md: 331 }}
+            key={idx}
+          >
             <CardHeader h={219}>
               <Image src={p.banner} bgSize={"cover"} w={"100%"} h={"100%"} />
             </CardHeader>

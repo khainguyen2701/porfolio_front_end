@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 import TitleLine from "../../TitleLine";
 
 const languages = ["Javascript", "Typescript", "Java Basic", "C++ Basic"];
@@ -14,19 +14,28 @@ const other = ["HTML", "CSS", "SCSS", "EJS", "REST API"];
 
 const Desktop = () => {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={60}>
+    <Box display={"flex"} flexDirection={"column"} gap={{ base: 10, md: 30 }}>
       <TitleLine name="skills" />
-      <Box display={"flex"} gap={60}>
-        <Box style={{ width: "40%" }}>
+      <Box
+        display={"flex"}
+        gap={{ base: 10, md: 20 }}
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        <Box width={{ base: "100%", md: "40%" }}>
           <Image src="src/assets/Group 36.png" alt="group 36" />
-        </Box>{" "}
-        <Box display={"flex"} justifyContent={"flex-start"} gap={20}>
+        </Box>
+        <Box
+          display={"flex"}
+          justifyContent={"flex-start"}
+          gap={{ base: 10, md: 10 }}
+          flexDirection={{ base: "column", md: "row" }}
+        >
           <Box
             style={{
               border: "1px solid #ABB2BF",
-              width: "150px",
               height: "fit-content"
             }}
+            w={{ base: "100%", md: "150px" }}
           >
             <Box style={{ borderBottom: "1px solid #ABB2BF", padding: 5 }}>
               <Text style={{ color: "white", fontSize: 16 }}>Languages</Text>
@@ -37,13 +46,17 @@ const Desktop = () => {
               </Text>
             </Box>
           </Box>
-          <Box display={"flex"} flexDirection={"column"} gap={20}>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            gap={{ base: 10, md: 20 }}
+          >
             <Box
               style={{
                 border: "1px solid #ABB2BF",
-                width: "150px",
                 height: "fit-content"
               }}
+              w={{ base: "100%", md: "150px" }}
             >
               <Box style={{ borderBottom: "1px solid #ABB2BF", padding: 5 }}>
                 <Text style={{ color: "white", fontSize: 16 }}>Databases</Text>
@@ -57,9 +70,9 @@ const Desktop = () => {
             <Box
               style={{
                 border: "1px solid #ABB2BF",
-                width: "150px",
                 height: "fit-content"
               }}
+              w={{ base: "100%", md: "150px" }}
             >
               <Box style={{ borderBottom: "1px solid #ABB2BF", padding: 5 }}>
                 <Text style={{ color: "white", fontSize: 16 }}>Other</Text>
@@ -71,13 +84,17 @@ const Desktop = () => {
               </Box>
             </Box>
           </Box>
-          <Box display={"flex"} flexDirection={"column"} gap={20}>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            gap={{ base: 10, md: 20 }}
+          >
             <Box
               style={{
                 border: "1px solid #ABB2BF",
-                width: "150px",
                 height: "fit-content"
               }}
+              w={{ base: "100%", md: "150px" }}
             >
               <Box style={{ borderBottom: "1px solid #ABB2BF", padding: 5 }}>
                 <Text style={{ color: "white", fontSize: 16 }}>Tools</Text>
@@ -91,9 +108,9 @@ const Desktop = () => {
             <Box
               style={{
                 border: "1px solid #ABB2BF",
-                width: "150px",
                 height: "fit-content"
               }}
+              w={{ base: "100%", md: "150px" }}
             >
               <Box style={{ borderBottom: "1px solid #ABB2BF", padding: 5 }}>
                 <Text style={{ color: "white", fontSize: 16 }}>Frameworks</Text>

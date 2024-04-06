@@ -1,11 +1,48 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import TitleLine from "../../TitleLine";
-
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 const Desktop = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = refContainer.current;
+      const sectionPosition = section?.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (sectionPosition ?? 0 < windowHeight) {
+        gsap.from(section, {
+          opacity: 1,
+          y: 50,
+          duration: 1
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={60} mb={60}>
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      gap={{ base: 10, md: 30 }}
+      mb={{ base: 10, md: 20 }}
+      className="box"
+      style={{ opacity: 1 }}
+      ref={refContainer}
+    >
       <TitleLine name="about-me" />
-      <Box display={"flex"} gap={6} justifyContent="space-between">
+      <Box
+        display={"flex"}
+        gap={6}
+        justifyContent="space-between"
+        flexDirection={{ base: "column", md: "row" }}
+      >
         <Box w="100%">
           <Box
             style={{
@@ -62,7 +99,6 @@ const Desktop = () => {
               src="src/assets/Group 50.png"
               alt="Image Alternatively"
               objectFit={"contain"}
-              style={{ borderBottom: "2px solid #ABB2BF" }}
             />
           </Box>
         </Box>

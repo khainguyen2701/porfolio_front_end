@@ -1,20 +1,22 @@
 import { Box } from "@chakra-ui/react";
 import Layout from "../Layout";
+import AboutMe from "../components/AboutMe";
 import Banner from "../components/Banner";
-import Quotes from "../components/Quotes";
+import Contacts from "../components/Contact";
 import Project from "../components/Project";
 import Skill from "../components/Skill";
-import AboutMe from "../components/AboutMe";
+import WorkExp from "../components/WorkExp";
 
 const HomePage = () => {
   return (
     <Layout>
       <Box display={"flex"} gap={"61px"} flexDirection={"column"}>
         <Banner />
-        <Quotes />
         <Project />
         <Skill />
+        <WorkExp />
         <AboutMe />
+        <Contacts />
       </Box>
     </Layout>
   );

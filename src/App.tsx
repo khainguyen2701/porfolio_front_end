@@ -1,4 +1,9 @@
-import { ChakraBaseProvider, Container, Divider } from "@chakra-ui/react";
+import {
+  ChakraBaseProvider,
+  Container,
+  Divider,
+  extendTheme
+} from "@chakra-ui/react";
 import HomePage from "./page";
 
 const theme = {
@@ -17,10 +22,20 @@ const theme = {
     Divider
   }
 };
+const themes = extendTheme({
+  breakpoints: {
+    base: "0px",
+    sm: "320px",
+    md: "768px",
+    lg: "960px",
+    xl: "1200px",
+    "2xl": "1536px"
+  }
+});
 
 function App() {
   return (
-    <ChakraBaseProvider theme={theme}>
+    <ChakraBaseProvider theme={{ ...themes, ...theme }}>
       <HomePage />
     </ChakraBaseProvider>
   );

@@ -1,7 +1,7 @@
 import Desktop from "./Desktop";
 
-const AboutMe = () => {
+const WorkExp = () => {
   return <Desktop />;
 };
 
-export default AboutMe;
+export default WorkExp;

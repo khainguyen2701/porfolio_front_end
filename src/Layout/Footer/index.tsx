@@ -1,7 +1,7 @@
-import React from "react";
+import Desktop from "./Desktop";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return <Desktop />;
 };
 
 export default Footer;

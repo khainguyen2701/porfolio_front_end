@@ -1,7 +1,7 @@
-import React from "react";
+import Desktop from "./Desktop";
 
-const AboutMe = () => {
-  return <div>AboutMe</div>;
+const Contacts = () => {
+  return <Desktop />;
 };
 
-export default AboutMe;
+export default Contacts;

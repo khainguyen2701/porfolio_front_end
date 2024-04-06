@@ -1,4 +1,7 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 
@@ -9,16 +12,43 @@ const StyleVirtualButton = styled(Box)`
     border-color: "white";
   }
 `;
+gsap.registerPlugin(ScrollTrigger);
 
 const Desktop = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const refContainerLeft = useRef<HTMLDivElement>(null);
+  const refContainerRight = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.to(refContainer.current, {
+      duration: 2.0,
+      ease: "power1.out",
+      y: 200
+    });
+    gsap.to(refContainerLeft.current, {
+      duration: 2.0,
+      ease: "power1.out",
+      x: 200
+    });
+    gsap.to(refContainerRight.current, {
+      duration: 2.0,
+      ease: "power1.out",
+      x: -200
+    });
+  }, [refContainer, refContainerLeft, refContainerRight]);
+
   return (
     <Box
       display={"flex"}
-      gap={6}
+      gap={{ base: 2, md: 6 }}
       justifyContent="space-between"
-      height={"70vh"}
+      flexDirection={{ base: "column-reverse", md: "row" }}
+      ref={refContainer}
+      opacity={1}
+      top={-200}
+      position={"relative"}
     >
-      <Box w="100%">
+      <Box w="100%" ref={refContainerLeft} position={"relative"} left={-200}>
         <Box
           style={{
             height: "100%",
@@ -66,7 +96,7 @@ const Desktop = () => {
             >
               <Typewriter
                 options={{
-                  strings: ["on ReactJS framework"],
+                  strings: ["on ReactJS/NextJS framework"],
                   autoStart: true,
                   loop: true
                 }}
@@ -89,14 +119,16 @@ const Desktop = () => {
           </StyleVirtualButton>
         </Box>
       </Box>
-      <Box w="100%" display={"flex"} justifyContent={"end"}>
-        <Box
-          display={"flex"}
-          style={{
-            position: "absolute"
-          }}
-        >
-          <Box style={{ position: "absolute", top: 120, zIndex: 1 }}>
+      <Box
+        position={"relative"}
+        left={200}
+        ref={refContainerRight}
+        w="100%"
+        display={"flex"}
+        justifyContent={"end"}
+      >
+        <Box display={"flex"}>
+          <Box position={"absolute"} top={120} zIndex={1}>
             <Image
               boxSize="150px"
               src="src/assets/line.png"
@@ -114,12 +146,12 @@ const Desktop = () => {
                 />
               </Box>{" "}
               <Box
-                display={"flex"}
+                display={{ base: "none", md: "flex" }}
                 style={{ border: "1px solid #ABB2BF", padding: "0px 10px" }}
               >
                 <Text
                   style={{
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: 600,
                     lineHeight: "42px",
                     color: "white",
@@ -129,9 +161,7 @@ const Desktop = () => {
                 >
                   <Typewriter
                     options={{
-                      strings: [
-                        "Currently I am looking for a job that best suits me"
-                      ],
+                      strings: ["Currently, I am waiting for work from you"],
                       autoStart: true,
                       loop: true
                     }}
